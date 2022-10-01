@@ -314,7 +314,7 @@ public class AppTest{
 		
 		assertAll(
 				()->assertEquals(1,dao.changePassWord(2,"Pra@1234#","Rit@1234$")),
-				()->assertThrows(GlobalException.class,()->dao.changePassWord(4,"Pra@1234#","Rit@1234%"))
+				()->assertThrows(GlobalException.class,()->dao.changePassWord(4,"Pra@1234#","Rit@1234$"))
 				);
 	}
 	
