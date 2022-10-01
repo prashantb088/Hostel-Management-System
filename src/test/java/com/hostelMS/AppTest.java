@@ -55,7 +55,7 @@ public class AppTest{
 		b.setFirstName("RiteshKumar");
 		b.setLastName("KumarK");
 		b.setUserName("RiteshKum");
-		b.setUserPassword("N12345@Kk");
+		b.setUserPassword("K12345@Kk");
 		b.setUserContact("9582507083");
 		b.setUserAddress("Mumbai");
 		
