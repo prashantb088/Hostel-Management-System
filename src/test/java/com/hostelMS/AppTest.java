@@ -55,7 +55,7 @@ public class AppTest{
 		b.setFirstName("RiteshKumar");
 		b.setLastName("KumarK");
 		b.setUserName("RiteshKum");
-		b.setUserPassword("K12345@Kk");
+		b.setUserPassword("R12345@Kk");
 		b.setUserContact("9582507083");
 		b.setUserAddress("Mumbai");
 		
@@ -90,7 +90,7 @@ public class AppTest{
 		User u = ses.get(User.class, 1);
 		
 		// FETCHING SAME USER FROM DATABASE USING DAO OBJECT AND PRIMARY KEY 
-		User a = dao.Login("KetanK", "K12345@");
+		User a = dao.Login("PrashantB", "P12345@");
 		
 		assertAll(
 				// POSITIVE TEST CASE
@@ -101,7 +101,7 @@ public class AppTest{
 				// NEGATIVE TEST CASE
 				// GIVING WRONG USERNAME AND PASSWORD IN LOGIN METHOD
 				// EXPECTING AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.Login("KetanKumar", "K123456"))
+				()->assertThrows(GlobalException.class,()->dao.Login("Prashant Bansal", "P123456"))
 		);
 	}
 
@@ -155,13 +155,13 @@ public class AppTest{
 				// POSITIVE TEST CASE
 				// ALLOTING A ROOM TO A USER FROM DATABASE
 				// EXPECTING POSITIVE RESULT
-				()->assertEquals(1,dao.allotRoom(2, 100)),
+				()->assertEquals(1,dao.allotRoom(2, 200)),
 				
 				// NEGATIVE TEST CASE
 				// GIVIING WRONG ROOM ID
 				// GIVING WRONG USER ID IN METHOD
 				// EXPECTING AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.allotRoom(500, 500))
+				()->assertThrows(GlobalException.class,()->dao.allotRoom(500, 600))
 		);
 		
 	}
@@ -185,7 +185,7 @@ public class AppTest{
 				// NEGATIVE TEST CASE
 				// GIVING USER ID THAT DOES NOT EXIST IN DATABASE
 				// EXPECTING AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.deleteUser(500))
+				()->assertThrows(GlobalException.class,()->dao.deleteUser(700))
 				);
 	}
 
@@ -207,7 +207,7 @@ public class AppTest{
 				// NEGATIVE TEST CASE
 				// GIVING INCORRECT USER ID
 				// EXPECTING AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.generateRent(500,-600))
+				()->assertThrows(GlobalException.class,()->dao.generateRent(500,-700))
 		);															
 	}
 	
@@ -295,12 +295,12 @@ public class AppTest{
 				// POSITIVE TEST CASE
 				// TESTING CHANGE CONTACT METHOD TO CHAGE CONTCT OF USER 2
 				// EXPECTING TO CHANGE USER 2 CONTACT DETAIL IN DATABSE
-				()->assertEquals(1,dao.changeContact(2, "9999999999")),
+				()->assertEquals(1,dao.changeContact(2, "7877777867")),
 				
 				// NEGATIVE TEST CASE
 				// TESTING CHANGE CONTACT METHOD FOR WRONG USER ID
 				// EXPECTING TO THROW AN EXCEPTION
-				()->assertThrows(GlobalException.class,()->dao.changeContact(500, "9999999999"))
+				()->assertThrows(GlobalException.class,()->dao.changeContact(500, "7877777867"))
 				);
 	}
 	
@@ -313,8 +313,8 @@ public class AppTest{
 		userDao dao = new userDaoimpl();
 		
 		assertAll(
-				()->assertEquals(1,dao.changePassWord(2,"AK12345@","amit1234")),
-				()->assertThrows(GlobalException.class,()->dao.changePassWord(4,"amit1234","AK12345@"))
+				()->assertEquals(1,dao.changePassWord(2,"Pra@1234#","Rit@1234$")),
+				()->assertThrows(GlobalException.class,()->dao.changePassWord(4,"Pra@1234#","Rit@1234%"))
 				);
 	}
 	
